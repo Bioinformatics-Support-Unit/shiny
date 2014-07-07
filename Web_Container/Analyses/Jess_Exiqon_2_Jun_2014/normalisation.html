@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Helios 1.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Normalisation - Array 2 - Jess</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/jquery.dropotron.min.js"></script>
+		<script src="../../js/skel.min.js"></script>
+		<script src="../../js/skel-panels.min.js"></script>
+		<script src="../../js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+
+		<!-- Header -->
+			<div id="header">
+
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="#" id="logo">Bioinformatics Analysis</a></h1>
+							<a href="#" id="logo"><img src="../../images/NCLBW.png" height=20% width=20% alt="" /></a>
+						</header>
+					</div>
+
+				<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<span>Analyses</span>
+									<ul>
+										<li><a href="raw_data.html">Raw Data Assessment</a></li>
+										<li><a href="normalisation.html">Normalisation</a></li>
+										<li><a href="qc.html">Quality Control (QC)</a></li>
+										<li><a href="normalised_data.html">Normalised Data</a></li>
+										<li><a href="de.html">Differential Expression (DE)</a></li>
+										<li><a href="pathway.html">Pathway Analysis</a></li>
+									</ul>
+								</li>
+								<li>
+									<span>Contact</span>
+									<ul>
+										<li><a href="http://bsu.ncl.ac.uk/support/staff/andrew-skelton/">Andrew Skelton</a></li>
+										<li>
+											<span>BSU &hellip;</span>
+											<ul>
+												<li><a href="http://bsu.ncl.ac.uk/support/">About</a></li>
+												<li><a href="http://bsu.ncl.ac.uk/support/contact-us/">Contact</a></li>
+												<li><a href="http://bsu.ncl.ac.uk/support/services/">Services</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="../../generic/IPA.html">Ingenuity Pathway Analysis (IPA)</a></li>
+							</ul>
+						</nav>
+
+			</div>
+
+		<!-- Main -->
+			<div class="wrapper style1">
+
+				<div class="container">
+					<div class="row">
+						<div class="12u skel-cell-important" id="content">
+							<article id="main" class="special">
+								<header>
+									<h2><a href="#">Normalisation Procedure</a></h2>
+									<span class="byline">
+										Exiqon miRNA Microarrays - Array 2 of 2
+									</span>
+								</header>
+
+								<section>
+									<header>
+										<h3>Overview</h3>
+									</header>
+									<p>
+										Normalisation is used to make the intinsities of different arrays comparable to each other. This is a two-
+										colour miRNA experiment and follows a similar paradism to a traditional two-colour but with some specific
+										filtering and correction stages.
+									</p>
+								</section>
+
+								<section>
+									<header>
+										<h3>Probe Level Correction</h3>
+									</header>
+									<p>
+										Looking at the array level, there are some potential outliers, but at the probe level we can correct some
+										probes at extreme values (greater than 2.665 standard deviations above the mean). This will allow us to
+										look at the profile plot again to see how this changes the overall probe patterns. It can be seen that from
+										the profile plot (log2 Green Channel Post Probe Level Correction) that array 19715600 is still of concern
+										but also array 19715584 is of potential Concern.
+									</p>
+									<a href="#" class="image featured"><img src="images/profile_plot_log2G_PostProbeCorrection.jpeg" alt="" /></a>
+								</section>
+
+								<section>
+									<header>
+										<h3>Missing Values</h3>
+									</header>
+									<p>
+										We can correct for missing values between a primary and background channel prior to normalisation. In this
+										experiment’s case, there were no missing intensity values in any channels.
+									</p>
+								</section>
+
+								<section>
+									<header>
+										<h3>Threshold Filtering</h3>
+									</header>
+									<p>
+										Prior to normalisation we can use threshold filtering to remove probes that are likely to be erroneous and
+										aren’t miRNAs or Calibration Probes. We filter probes whose foreground intensity values are below 1.2 times
+										their background intensity. We keep all probes which have at least 20% of samples above the filtering threshold.
+										These arrays have probes in quadruplicate, as such these tests must occur in all four replicate probes to pass
+										filtering. When looking at the final filtered set before normalisation (the best stage prior to normalisation
+										to identify potential outlier arrays), we can see that arrays 19715600 and 19715610 could be cause for concern.
+									</p>
+									<a href="#" class="image featured"><img src="images/profile_plot_log2G_PreNorm.jpeg" alt="" /></a>
+								</section>
+
+								<hr />
+
+								<section>
+									<header>
+										<h3>Normalisation Method</h3>
+									</header>
+									<p>
+										Here we look at the final identification of outliers at the array level in this experiment comparing multiple
+										Normalisation methods (Median, Loess, Quantile and VSN). Three methods are used to examine the effectiveness
+										of these normalisation procedures; PCA, Heatmap and Profile Plot. PCA or Principle Component Analysis is a way
+										to examine the variance of our data at the array level, tight clustering is best and outliers are usually clearly
+										identifiable. Heatmaps are used to see how the different expression values look, and we're looking for spots that
+										are aroung the same level of intensity across all arrays. Complemetary to the heatmap is a dendogram at the probe
+										level and array level, this is a euclidian distance measure between arrays and is also a good method to look for
+										outliers with. Finally, the profile plot shows how the intensities vary at the probe level across arrays. The data
+										that is put into these plots is normalised Green (reference) channel using the method stated, the top 50 unique
+										miRNAs are used with the highest standard deviation, then this data is log2 transformed.
+									</p>
+									<br>
+									<header>
+										<h4>No Normalisation</h4>
+									</header>
+									<p>
+								    As a baseline, this is how the data looks without any normalisation procedure performed.
+									</p>
+									<a href="#" class="image featured"><img src="images/none_final.jpeg" alt="" /></a>
+									<hr />
+									<header>
+										<h4>Median</h4>
+									</header>
+									<p>
+										Median Normalisation - All plots shows that 1975600 is a clear outlier. 1975584 has evidence on all plots to be
+										considered an outlier. 1975610 has high intensity values on the heatmap and the profile plot suggests that it
+										could also be an outlier.
+									</p>
+									<a href="#" class="image featured"><img src="images/median_final.jpeg" alt="" /></a>
+									<hr />
+									<header>
+										<h4>Loess</h4>
+									</header>
+									<p>
+										Loess Normalisation suggests the same evidence as Median normalisation in that arrays 1975600/610/584 have
+										indications of being outliers.
+									</p>
+									<a href="#" class="image featured"><img src="images/loess_final.jpeg" alt="" /></a>
+									<hr />
+									<header>
+										<h4>Quantile</h4>
+									</header>
+									<p>
+										Quantile suggests that 600 is a clear outlier and that the intensity values of 610 are higher than average, but
+										there's not much evidence to exclude 584.
+									</p>
+									<a href="#" class="image featured"><img src="images/quantile_final.jpeg" alt="" /></a>
+									<hr />
+									<header>
+										<h4>VSN</h4>
+									</header>
+									<p>
+										VSN (Variance Stabilizing Normalization) - Shows undoubtably that 600 and 610 are classed as outliers, with evidence
+										that 584 exerts some questionably higer intensity values than average.
+									</p>
+									<a href="#" class="image featured"><img src="images/vsn_final.jpeg" alt="" /></a>
+								</section>
+
+							</article>
+						</div>
+					</div>
+					<hr />
+				</div>
+			</div>
+
+		<!-- Footer -->
+				<!-- Footer -->
+					<div id="footer">
+						<div class="container">
+
+							<div class="row">
+								<div class="12u">
+
+									<!-- Contact -->
+										<section class="contact">
+											<header>
+												<h3>Want to know more?</h3>
+											</header>
+											<p>Contact the Bioinformatics Support Unit - bsu-support@ncl.ac.uk</p>
+											<ul class="icons">
+												<li><a href="https://twitter.com/nclbsu" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+											</ul>
+										</section>
+
+									<!-- Copyright -->
+										<div class="copyright">
+											<ul class="menu">
+												<li>&copy; Newcastle University BSU. All rights reserved.</li>
+												<li>Design: <a href="http://html5up.net/">HTML5 UP | Andrew Skelton</a></li>
+											</ul>
+										</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+	</body>
+</html>

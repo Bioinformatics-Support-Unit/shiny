@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Helios 1.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Differential Expression - Array 2 - Jess</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/jquery.dropotron.min.js"></script>
+		<script src="../../js/skel.min.js"></script>
+		<script src="../../js/skel-panels.min.js"></script>
+		<script src="../../js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+
+		<!-- Header -->
+			<div id="header">
+
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="#" id="logo">Bioinformatics Analysis</a></h1>
+							<a href="#" id="logo"><img src="../../images/NCLBW.png" height=20% width=20% alt="" /></a>
+						</header>
+					</div>
+
+				<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<span>Analyses</span>
+									<ul>
+										<li><a href="raw_data.html">Raw Data Assessment</a></li>
+										<li><a href="normalisation.html">Normalisation</a></li>
+										<li><a href="qc.html">Quality Control (QC)</a></li>
+										<li><a href="normalised_data.html">Normalised Data</a></li>
+										<li><a href="de.html">Differential Expression (DE)</a></li>
+										<li><a href="pathway.html">Pathway Analysis</a></li>
+									</ul>
+								</li>
+								<li>
+									<span>Contact</span>
+									<ul>
+										<li><a href="http://bsu.ncl.ac.uk/support/staff/andrew-skelton/">Andrew Skelton</a></li>
+										<li>
+											<span>BSU &hellip;</span>
+											<ul>
+												<li><a href="http://bsu.ncl.ac.uk/support/">About</a></li>
+												<li><a href="http://bsu.ncl.ac.uk/support/contact-us/">Contact</a></li>
+												<li><a href="http://bsu.ncl.ac.uk/support/services/">Services</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="../../generic/IPA.html">Ingenuity Pathway Analysis (IPA)</a></li>
+							</ul>
+						</nav>
+
+			</div>
+
+		<!-- Main -->
+			<div class="wrapper style1">
+
+				<div class="container">
+					<div class="row">
+						<div class="12u skel-cell-important" id="content">
+							<article id="main" class="special">
+								<header>
+									<h2><a href="#">Differential Expression</a></h2>
+									<span class="byline">
+										Exiqon miRNA Microarrays - Array 2 of 2
+									</span>
+								</header>
+
+								<section>
+									<header>
+										<h3>Overview</h3>
+									</header>
+									<p>
+										Eight comparisons were carried out on the normalised data. Six comparisons between Control, Lymphoma, High-Function and Low-Function,
+										along with two extra from high-function and low-function being grouped together.
+									</p>
+									<p>
+										Below is a "Shiny" Application which will carry out real time adjustments to your plot and gene lists as you make changes. There
+										are four tabs at the top: config, Volcano Plot, Filtered and Unfiltered. Config gives you the option to change your Contrast that
+										you're investigating, the Adjusted P-Value it's filtered by and the Fold Change that it's filtered by. The Volcano plot tab, once
+										selected, will show you where your significant miRNAs lie in comparison to others. Orange points denote significant by your Adjusted
+										P-Value and Fold Change filters and blue if it's not significant. The points on the volcano plot bring up a tooltip on mouseover to show
+										you the gene (or miRNA) name, Adjusted P-Value and log2 fold change. The Filtered and unfiltered tabs are the respective gene lists based
+										on the config tab.
+									</p>
+									<p>
+										Any questions or feedback, let me know. - You can also filter your gene lists to look for miRNAs you're interested in. like hsa-miR-21, but to
+										avoid the filter grabbing anything with hsa-miR-21 in the name, add a dollar sign to the end to signify that it's the end of the line
+										in the query - hsa-miR-21$.
+									</p>
+								</section>
+								<section>
+									<iframe src="http://bsu-srv.ncl.ac.uk:3838/sample-apps/Jess_A2_V2_DE" style="border: none; width: 100%; height: 740px"></iframe>
+								</section>
+							</article>
+						</div>
+					</div>
+					<hr />
+				</div>
+			</div>
+
+		<!-- Footer -->
+				<!-- Footer -->
+					<div id="footer">
+						<div class="container">
+
+							<div class="row">
+								<div class="12u">
+
+									<!-- Contact -->
+										<section class="contact">
+											<header>
+												<h3>Want to know more?</h3>
+											</header>
+											<p>Contact the Bioinformatics Support Unit - bsu-support@ncl.ac.uk</p>
+											<ul class="icons">
+												<li><a href="https://twitter.com/nclbsu" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+											</ul>
+										</section>
+
+									<!-- Copyright -->
+										<div class="copyright">
+											<ul class="menu">
+												<li>&copy; Newcastle University BSU. All rights reserved.</li>
+												<li>Design: <a href="http://html5up.net/">HTML5 UP | Andrew Skelton</a></li>
+											</ul>
+										</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+	</body>
+</html>
